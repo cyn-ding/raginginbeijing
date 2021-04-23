@@ -161,23 +161,10 @@ header{
      width:50%;
   }
 
-  /* nav{
-    display: flex;
-    padding: 30px;
-    flex-direction: row;
-    /* text-align: right;
-  } */
-
   nav li{
     display:inline;
     padding-right:20px;
   }
-
-  /* .container{
-    display: grid;
-    grid-template-columns: 50px auto 500px auto 50px;
-    grid-template-rows: 400px 425px 425px 400px;
-  }*/
 
   .gallery{
     min-height: 600px;
@@ -204,16 +191,16 @@ to turn off animations and movement
 for people who prefer reduced motion */
 @media screen and (prefers-reduced-motion: reduce){
   /*html{
-      scroll-behavior: auto; /* Removes scroll animation */
+      scroll-behavior: none; /* Removes scroll animation */
   /*}*/
 
   .skip a{
     -webkit-transition: none; /* sets to default setting */
     transition: none;        /* sets to default setting */
    }
- 
- /*Turn off parallax*/
-   header{
+
+  /*Turn off parallax*/
+  header{
     background-attachment: initial;
   }
-}
+} 
