@@ -190,10 +190,6 @@ header{
 to turn off animations and movement
 for people who prefer reduced motion */
 @media screen and (prefers-reduced-motion: reduce){
-  /*html{
-      scroll-behavior: none; /* Removes scroll animation */
-  /*}*/
-
   .skip a{
     -webkit-transition: none; /* sets to default setting */
     transition: none;        /* sets to default setting */
