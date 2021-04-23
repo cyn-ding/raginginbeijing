@@ -203,7 +203,7 @@ to turn off animations and movement
 for people who prefer reduced motion */
 @media screen and (prefers-reduced-motion: reduce){
   html{
-      scroll-behavior: auto; /* Removes scroll animation */
+      scroll-behavior: none; /* Removes scroll animation */
   }
 
   .skip a{
@@ -212,7 +212,7 @@ for people who prefer reduced motion */
    }
 
   /*Turn off parallax*/
-  header{
+/*   header{
     background-attachment: initial;
-  }
+  } */
 }
