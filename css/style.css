@@ -152,23 +152,6 @@ header{
 }
 
 
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (min-width: 770px) {
-  form{
-    width: 80%;
-    margin: 0 auto;
-  }
-
-  input{
-    width:80%;
-  }
-
-  textarea{
-    width:80%;
-    height: 25vh;
- }
-}
-
 @media all and (min-width: 760px){
 
   header{
@@ -220,17 +203,17 @@ header{
 to turn off animations and movement
 for people who prefer reduced motion */
 @media screen and (prefers-reduced-motion: reduce){
-  html{
-      scroll-behavior: none; /* Removes scroll animation */
-  }
+  /*html{
+      scroll-behavior: auto; /* Removes scroll animation */
+  /*}*/
 
   .skip a{
     -webkit-transition: none; /* sets to default setting */
     transition: none;        /* sets to default setting */
    }
-
-  /*Turn off parallax*/
-/*   header{
+ 
+ /*Turn off parallax*/
+   header{
     background-attachment: initial;
-  } */
+  }
 }
