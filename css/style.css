@@ -54,7 +54,7 @@ nav{
   display: flex;
   align-items: center;
   flex-direction: column;
-  background-color: rgb(190, 43, 43);
+  background-color: #761B06;
   padding: 25px 0;
   overflow: hidden;
   /*position: fixed;
@@ -65,10 +65,11 @@ nav{
 #active_icon::after{
   content: url("../images/black_pepper.png");
   width: 30%;
+  color:white;
 }
 
 nav a{
-  color: black;
+  color: white;
   font-weight: bold;
   text-decoration: none;
 }
@@ -76,13 +77,11 @@ nav a{
 nav a:hover{
   text-decoration: underline;
 }
-nav a:focus{
-  text-decoration: underline;
-}
-nav a:active{
-  text-decoration: underline;
-}
 
+.current{
+  color:black;
+  text-decoration: overline underline;
+}
 
 /*skip to main content*/
 .skip a{
@@ -138,11 +137,6 @@ header{
   width: 300px;
 }
 
-.wechat-image{
-  width: 300px;
-  display: grid;
-  justify-content: center;
-}
 
 .contact-icons{
   display: flex;
@@ -151,6 +145,40 @@ header{
   justify-content: center;
 }
 
+.cardcontainer{
+  position: relative;
+  align-self: center;
+  width: 250px;
+  height: 320px;
+}
+.cardflip{
+position:absolute;
+width: 100%;
+height: 100%;
+transform-style:preserve-3d;
+transition: all 0.5s ease;
+}
+.cardflip:hover{
+transform: rotateY(180deg);
+}
+
+.cardfront{
+position: absolute;
+width: 100%;
+height: 100%;
+backface-visibility: hidden;
+background-image: url("../images/qr_code.jpg");
+color: blanchedalmond;
+}
+.cardback{
+position: absolute;
+width: 100%;
+height: 100%;
+backface-visibility: hidden;
+background-image: url("../images/wechat_pfp.jpg");
+color: blanchedalmond;
+transform: rotateY(180deg);
+}
 
 @media all and (min-width: 760px){
 
@@ -176,41 +204,6 @@ header{
 
   }
 
-  .cardcontainer{
-    position: relative;
-    align-self: center;
-    width: 250px;
-    height: 320px;
-  }
-  .cardflip{
-position:absolute;
-width: 100%;
-height: 100%;
-transform-style:preserve-3d;
-transition: all 0.5s ease;
-  }
-  .cardflip:hover{
-transform: rotateY(180deg);
-  }
-
-.cardfront{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  background-image: url("../images/qr_code.jpg");
-  color: blanchedalmond;
-}
-.cardback{
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  background-image: url("../images/wechat_pfp.jpg");
-  color: blanchedalmond;
-  transform: rotateY(180deg);
-}
-
 @media all and (min-width: 1260px){
 
   header{
@@ -224,7 +217,7 @@ transform: rotateY(180deg);
 /* The code below is for accessibility
 to turn off animations and movement
 for people who prefer reduced motion */
-@media screen and (prefers-reduced-motion: reduce){
+@media (prefers-reduced-motion){
   .skip a{
     -webkit-transition: none; /* sets to default setting */
     transition: none;        /* sets to default setting */
@@ -234,4 +227,11 @@ for people who prefer reduced motion */
   header{
     background-attachment: initial;
   }
-} 
+  /*stop flip*/
+  .cardflip:hover{
+    transform: none;
+    }
+  }
+}
+
+
