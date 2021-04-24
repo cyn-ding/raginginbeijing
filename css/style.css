@@ -49,7 +49,7 @@ header p{
 }
 
 
-/*navigation*/
+/*NAVIGATION*/
 nav{
   display: flex;
   align-items: center;
@@ -83,7 +83,7 @@ nav a:hover{
   text-decoration: overline underline;
 }
 
-/*skip to main content*/
+/*SKIP TO MAIN*/
 .skip a{
   background: white;
   left: 0;
@@ -122,6 +122,18 @@ header{
 
 }
 
+.txtcontainer{
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top:0;
+  bottom: 0;
+  line-height: 1.5em;
+
+}
+
 .gallery{
   min-height: 600px;
   display: grid;
@@ -143,8 +155,52 @@ header{
   flex-flow: column;
   align-items: center;
   justify-content: center;
+  height: 450px;
 }
 
+/*FORM*/
+.form_container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+legend{
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+label{
+  display: inline-flex;
+  width: 100%;
+  margin-bottom: 8px;
+  margin-top: 12px;
+}
+
+textarea{
+  width: 100%;
+  padding: 10px 5px;
+  margin: 5px 0 20px 0;
+  border: 1px solid #2E3138;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+input[type=submit] {
+  background-color: #6C6F7D;
+  border: 5px;
+  color: white;
+  height: 30px;
+  width: 100%;
+  text-transform: uppercase;
+}
+
+input[type=submit]:hover {
+  opacity: 0.6;
+}
+
+
+/*CARD FLIP*/
 .cardcontainer{
   position: relative;
   align-self: center;
@@ -160,6 +216,12 @@ transition: all 0.5s ease;
 }
 .cardflip:hover{
 transform: rotateY(180deg);
+}
+
+/*this is how I try to make it keyboard accessible based on what I found here*/
+/*https://www.w3schools.com/howto/howto_css_flip_card.asp*/
+.cardcontainer:focus .cardflip{
+  transform: rotateY(180deg);
 }
 
 .cardfront{
